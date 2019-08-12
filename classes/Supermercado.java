@@ -9,14 +9,37 @@ package supermercado;
  *
  * @author Cleuton
  */
-import java.util.Date;
+import java.util.LinkedList;
 public class Supermercado {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    
+        Cadastro usuario1= new Cadastro();
+        usuario1.cadastrar();
+        
+        Cadastro usuario2= new Cadastro();
+        usuario2.cadastrar();
+        
+        LinkedList listaUsuarios = new LinkedList();
+        listaUsuarios.add(usuario1);
+        listaUsuarios.add(usuario2);
+        
+        Cadastro aux= new Cadastro();
+        aux=(Cadastro) listaUsuarios.getFirst();
+        
+        System.out.println("imprimindo o usuario indice 1: "+aux.getNome());
+        
+        Login login= new Login();
+        
+        login.logar(listaUsuarios);
+        
+        
+        
+        
+        
+     }
     
 }

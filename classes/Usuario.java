@@ -8,48 +8,45 @@ package supermercado;
 /**
  *
  * @author Cleuton
+ * criando classe abstrata usuario
  */
-public class Usuario {
+public abstract class Usuario{
     
     private String nome;
     private String cpf;
     private String conta;
     private String senha;
-    
-    public Usuario(String nome,String cpf,String conta,String senha){
-        this.nome = nome;
-        this.cpf= cpf;
-        this.conta= conta;
-        this.senha= senha;
-    }
      
-    private String getNome(){
+    public String getNome(){
         return nome;
     }
     
-    private String getCPF(){
+    public  String getCPF(){
         return cpf;
     }
-    
-    private String getConta(){
+
+    public String getConta(){
         return conta;
     }
     
-    private String getSenha(){
+    public String getSenha(){
         return senha;
     }
     
-    
+     void setNome(String usuario){
+        this.nome = usuario;
+    }
    
-    public boolean setSenha(String novaSenha){
-         if(novaSenha == null ? senha == null : novaSenha.equals(senha)){
-             this.senha= novaSenha;
-             return true;
-         }
-         else{
-             return false;
-         }
-         
-   }
+    void setSenha(String novaSenha){
+        this.senha= novaSenha;
+    }
+    
+     void setConta(String novaConta){
+        this.conta= novaConta;
+    }
+     
+     void setCPF(String CPF){
+         this.cpf= CPF;
+     }
 }
 
